@@ -1,0 +1,9 @@
+
+url: "https://media.sbinstitute.com/courses/fall-2014/"
+tasks:
+  - name: 'page'
+    regex: '<a href="(?<url>\/courses\/fall-2014\/(?<title>.*)\/)">'
+    tasks:
+      - name: 'file'
+        regex: 'href="(?<url>https:\/\/media.sbinstitute.com\/_dl\/lectures\/.*\/(?<title>.*).m4a)"'
+        file: 'downloads/{{page.title}}_{{file.title}}.m4a'
